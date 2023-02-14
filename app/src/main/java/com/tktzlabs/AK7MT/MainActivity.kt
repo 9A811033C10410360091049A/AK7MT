@@ -10,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.fragment.findNavController
 import com.tktzlabs.AK7MT.databinding.ActivityMainBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -51,20 +52,16 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         /*
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
-        }
-        */
-
-        /*
         * REST API test
         * */
         // launching a new coroutine
+        /*
         GlobalScope.launch {
             val ping = RetrofitHelper.getPing()
             if (ping != "")
                 Log.d("REST API PING TEST: ", ping)
         }
+         */
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -75,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_settings) {
-            findNavController(R.id.SettingsFragment) // tohle nefunguje
+            findNavController(R.id.action_WelcomeFragment_to_SettingsFragment)
             return true
         }
 

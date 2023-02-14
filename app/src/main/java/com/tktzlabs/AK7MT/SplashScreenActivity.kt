@@ -1,6 +1,5 @@
 package com.tktzlabs.AK7MT
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler

@@ -1,5 +1,6 @@
 package com.tktzlabs.AK7MT
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.tktzlabs.AK7MT.PreferenceHelper.apiUrl
 import com.tktzlabs.AK7MT.databinding.FragmentWelcomeBinding
 
-
-/*
-* TODO
-* refaktoruj jmena fraagmentu - welcomefragment z firstfragmetn, tradingfragment ze secondfragment
-* do trading fragmentu zobrazit cenu BTC a dole dve tlacitko pod tim pro buy and sell
-* pod tim adapter s obchody
-*   - jednoducha logika ... nemuze prodat kdyz nic nemas, kupovat muzes neomezene, prodat pak muzes jen celkove mnozsti .... tzn udelat asi sqlite adapter
-*
-* */
 
 class WelcomeFragment : Fragment() {
     private val customPreference = "User_data"
@@ -47,11 +39,15 @@ class WelcomeFragment : Fragment() {
         } else {
             view.findViewById<TextView>(R.id.textview_first).text = getString(R.string.welcome_settings_set)
             view.findViewById<Button>(R.id.button_trading).visibility = View.VISIBLE
-            view.findViewById<Button>(R.id.button_settings).visibility = View.GONE
+            view.findViewById<Button>(R.id.button_settings).visibility = View.VISIBLE
         }
 
         binding.buttonTrading.setOnClickListener {
-            findNavController().navigate(R.id.action_WelcomeFragment_to_TradingFragment)
+            //findNavController().navigate(R.id.action_WelcomeFragment_to_TradingFragment)
+            requireActivity().run {
+                startActivity(Intent(this, TradingActivity::class.java))
+                finish()
+            }
         }
 
         binding.buttonSettings.setOnClickListener {

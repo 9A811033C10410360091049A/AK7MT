@@ -10,9 +10,21 @@
     <string name="settings">Nastavení</string>
     <string name="previous">Předchozí</string>
     <string name="save">Uložit</string>
+    <string name="buy">Nakup</string>
+    <string name="sell">Prodej</string>
+    <string name="reset">RESET</string>
     <string name="welcome_settings">Vítejte, nejdřív nastavte API endpoint v Nastavení</string>
     <string name="welcome_settings_set">Vítejte, pokračujte na Další obrazovku</string>
 
     <string name="first_fragment_init_text"></string>
     <string name="hello_second_fragment">Ahoj z druheho fragmentu. Arg: %1$s</string>
+    <string name="title_activity_trading">TradingActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="title_activity_trading2">TradingActivity2</string>
+
 </resources>
